@@ -1,0 +1,28 @@
+.DS_Store
+Thumbs.db
+
+# secrets — 絶対に commit しない
+.env
+.env.*
+!.env.example
+credentials/
+**/secret.*
+**/api-key.*
+
+# Claude Code のローカル状態
+.claude/settings.local.json
+.claude/projects/
+.claude/.cache/
+
+# Node / Python
+node_modules/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
