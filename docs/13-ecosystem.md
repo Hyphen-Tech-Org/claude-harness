@@ -126,10 +126,35 @@
 - 学べる点: PRD ベース運営、Stripe/Web3 同時収益、ダッシュボード自動化、AI エージェントへの権限・予算設計
 - ケーススタディは Paperclip 公式リポ内 `07-使用案例/案例-Nat Eliason 的 AI 创业实验.md` にも収録
 
-### 「Reflo」について
+### Ruflo — Claude Code 向けマルチエージェント・オーケストレーション
 
-調査時点（2026-05）では、上記エコシステムに連なる公開 OSS として **「Reflo」名義のプロジェクトは GitHub では確認できませんでした**（`grailbio/reflow` 等の同名 OSS はあるが文脈が異なる）。
-今後公開された場合は本セクションに追記します。情報をお持ちの方は Issue で教えてください。
+- リポ: [`ruvnet/ruflo`](https://github.com/ruvnet/ruflo) ⭐️ 50k / MIT / TypeScript
+- 公式サイト: <https://cognitum.one> / UI ベータ: <https://flo.ruv.io>
+- 著者: rUv ([`@ruvnet`](https://github.com/ruvnet))
+- 旧名: **Claude Flow**（リブランドして Ruflo に改名）
+- 公式説明:
+  > _"Multi-agent AI orchestration for Claude Code. Orchestrate 100+ specialized AI agents across machines, teams, and trust boundaries."_
+- 何ができる？:
+  - **Swarm（群知能）**: 100+ の専門エージェントが自己組織化
+  - **Self-Learning Memory**: タスク毎に学び、セッションを跨いで記憶
+  - **Federation**: マシン間で安全にエージェント通信、データ漏洩なし
+  - **Hooks system**: タスクを自動ルーティング、成功パターンを学習、バックグラウンドでエージェント調整
+- インストール:
+  ```bash
+  # Path A: Claude Code Plugin（軽量、slash commands のみ）
+  /plugin marketplace add ruvnet/ruflo
+  /plugin install ruflo-core@ruflo
+
+  # Path B: フルインストール (98 agents / 60+ commands / 30 skills / MCP / hooks)
+  npx ruvflo init
+  ```
+- 関連: [`ruvnet/agentic-flow`](https://github.com/ruvnet/agentic-flow) (697★) — Claude Code / Agent SDK で低コスト代替モデルに切替・クラウドデプロイ
+
+### 関連: ruvnet エコシステム
+
+- [`ruvnet/RuVector`](https://github.com/ruvnet/RuVector) (4k★) — Rust 製の高速ベクトル GNN メモリ DB（Ruflo の記憶層に使われる）
+- [`ruvnet/open-claude-code`](https://github.com/ruvnet/open-claude-code) (278★) — Claude Code CLI のリバースエンジニアリング再構築
+- [`ruvnet/sparc`](https://github.com/ruvnet/sparc) (456★) — SPARC 開発方法論（Specification, Pseudocode, Architecture, Refinement, Completion）
 
 ## 📡 情報ソース（公式 / 公式に近い）
 
