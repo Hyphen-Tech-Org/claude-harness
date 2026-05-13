@@ -82,7 +82,7 @@
 ## セッションで使う
 
 ```
-GitHub MCP 経由で、niki-nakamura/venture-cafe-assets の open issues を一覧して。
+GitHub MCP 経由で、niki-nakamura/claude-code-starter-kit の open issues を一覧して。
 ```
 
 → Claude が MCP サーバを呼び、結果をコンテキストに取り込んで返答します。

@@ -72,8 +72,8 @@ winget install Anthropic.ClaudeCode     # Windows
 ### 2. このリポを clone して入る
 
 ```bash
-git clone https://github.com/niki-nakamura/venture-cafe-assets.git claude-code-starter
-cd claude-code-starter
+git clone https://github.com/niki-nakamura/claude-code-starter-kit.git
+cd claude-code-starter-kit
 ```
 
 ### 3. Claude Code を起動
@@ -139,7 +139,7 @@ claude
 ## 🏗️ リポ構造
 
 ```
-claude-code-starter/
+claude-code-starter-kit/
 ├── README.md                     ← この入口
 ├── CLAUDE.md                     ← Claude 用プロジェクト指示（テンプレ）
 ├── LICENSE                       ← MIT
