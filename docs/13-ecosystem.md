@@ -85,11 +85,51 @@
 | [`SimoneAvogadro/android-reverse-engineering-skill`](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) | 5.7k | Android リバースエンジニアリング |
 | [`Aaronontheweb/dotnet-skills`](https://github.com/Aaronontheweb/dotnet-skills) | 923 | .NET 開発向け |
 
-## ⚠️ "Felix" / "Paperclip" / "Reflo" など内部呼称について
+## 🤖 「ゼロ人類従業員」エコシステム — Paperclip / OpenClaw / Felix
 
-ユーザコミュニティで言及される一部の内部プロジェクト名（例: Paperclip, Felix, Reflo）は、特定組織の **私的プロジェクト**であり公開 OSS ではありません。
-本キットでは **公開された 1 次情報のみ** を引用する方針のため、上記カタログには含めていません。
-類似のアーキテクチャは Superpowers / wshobson/agents / beans 等で公開されています。
+2026 年に急成長中の **「人間ゼロで会社を回す」OSS スタック** を紹介します。
+本キットでは **公開された 1 次情報のみ** を引用しています。
+
+### Paperclip — AI エージェント会社の OSS オーケストレータ
+
+- リポ: [`paperclipai/paperclip`](https://github.com/paperclipai/paperclip) ⭐️ 65k / MIT
+- 公式サイト: <https://paperclip.ing>
+- 何？: **「ゼロ人類従業員企業」向けの OSS 会社運営基盤**
+- 公式説明:
+  > _"If OpenClaw is an _employee_, Paperclip is the _company_."_
+  > Node.js サーバ + React UI。AI エージェントのチームに**ゴール**を割り当て、組織図 / 予算 / ガバナンスを管理。
+- 対応エージェント: **Claude Code** / OpenClaw / Codex / Cursor / Bash / HTTP
+- 関連 MCP サーバ: [`Wizarck/paperclip-mcp`](https://github.com/Wizarck/paperclip-mcp) (16★)、[`darljed/paperclip-mcp`](https://github.com/darljed/paperclip-mcp) (2★)
+
+### OpenClaw — パーソナル AI アシスタント（OSS）
+
+- リポ: [`openclaw/openclaw`](https://github.com/openclaw/openclaw) ⭐️ 371k / MIT
+- 公式サイト: <https://openclaw.ai>
+- 何？: **自分のデバイスで動かす個人 AI アシスタント** (macOS/iOS/Android/Win)
+- 対応チャンネル: WhatsApp / Telegram / Slack / Discord / Signal / iMessage / Teams / LINE 等 22+
+- 関連: [`VoltAgent/awesome-openclaw-skills`](https://github.com/VoltAgent/awesome-openclaw-skills) (48k★) — Skills カタログ
+- 関連: [`openclaw/clawhub`](https://github.com/openclaw/clawhub) (8.6k★) — 公式 Skill ディレクトリ
+- 関連 MCP / アダプタ: [`NousResearch/hermes-paperclip-adapter`](https://github.com/NousResearch/hermes-paperclip-adapter) (1.2k★) — Nous Research の Hermes を Paperclip "従業員" として動かす
+
+### Felix — Nat Eliason の 1 人 AI 起業実験
+
+- 主体: Nat Eliason（クリプト出身の作家・起業家、[@nateliason](https://x.com/nateliason)）
+- 公開リポ:
+  - [`Nateliason/felixcraft-site`](https://github.com/Nateliason/felixcraft-site) — Felix の企業サイト・ダッシュボード・Stripe/暗号通貨収益自動表示
+  - [`Nateliason/paperclip`](https://github.com/Nateliason/paperclip) — Paperclip fork
+  - [`Nateliason/sondex-oss`](https://github.com/Nateliason/sondex-oss) (4★) — OpenClaw エージェント用セルフホスト記憶層 (Postgres、クラウド依存なし)
+  - [`Nateliason/send-to-openclaw`](https://github.com/Nateliason/send-to-openclaw) (70★) — Chrome 拡張：ページ内容を OpenClaw に送信
+- 何？: **「人間の従業員 0 人で売上 100 万ドル」を目標** にした、Paperclip + OpenClaw による 1 人運営 AI スタートアップ実験
+- 実績（公開情報）:
+  - 2026 年 1 月後半、シード 1,000 ドルで開始
+  - 数週間で売上 ≈ 20 万ドル：Stripe 経由 $100,570 + 47.87 ETH（≈ $94,973）
+- 学べる点: PRD ベース運営、Stripe/Web3 同時収益、ダッシュボード自動化、AI エージェントへの権限・予算設計
+- ケーススタディは Paperclip 公式リポ内 `07-使用案例/案例-Nat Eliason 的 AI 创业实验.md` にも収録
+
+### 「Reflo」について
+
+調査時点（2026-05）では、上記エコシステムに連なる公開 OSS として **「Reflo」名義のプロジェクトは GitHub では確認できませんでした**（`grailbio/reflow` 等の同名 OSS はあるが文脈が異なる）。
+今後公開された場合は本セクションに追記します。情報をお持ちの方は Issue で教えてください。
 
 ## 📡 情報ソース（公式 / 公式に近い）
 
