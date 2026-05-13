@@ -17,7 +17,7 @@
 
 ### Superpowers — Jesse Vincent (`obra`)
 
-- リポ: [`obra/superpowers`](https://github.com/obra/superpowers) ⭐️ 188k
+- リポ: [`obra/superpowers`](https://github.com/obra/superpowers) ⭐️ 189k
 - 何？: **エージェント向け Skill フレームワーク + 開発方法論**
 - 入っている: TDD / debugging / planning / parallel agents / git worktrees / code review …
 - 対応: Claude Code / Codex CLI / Cursor / Gemini CLI / Factory Droid / GitHub Copilot CLI / OpenCode
@@ -37,7 +37,7 @@
 
 ### Beans — フラットファイル issue tracker
 
-- リポ: [`hmans/beans`](https://github.com/hmans/beans) ⭐️ 767
+- リポ: [`hmans/beans`](https://github.com/hmans/beans) ⭐️ 768
 - 何？: **人間とロボット用の、CLI ベース・フラットファイルの issue tracker**
 - なぜ嬉しい？: Notion / Jira を立てずに、Markdown ファイルでタスクを管理し、Claude にもそれを認識させられる
 - Claude Code 連携: `SessionStart` / `PreCompact` hooks に `beans prime` を仕込むだけ
@@ -47,7 +47,7 @@
 
 | リポ | ⭐️ | 内容 |
 |---|---|---|
-| [`disler/claude-code-hooks-mastery`](https://github.com/disler/claude-code-hooks-mastery) | 3.6k | Hooks の体系的学習教材 |
+| [`disler/claude-code-hooks-mastery`](https://github.com/disler/claude-code-hooks-mastery) | 3.7k | Hooks の体系的学習教材 |
 | [`trailofbits/skills`](https://github.com/trailofbits/skills) | 5.2k | セキュリティ研究 Skill 集（Trail of Bits 公式） |
 
 ## 📚 キュレーション（Awesome Lists）

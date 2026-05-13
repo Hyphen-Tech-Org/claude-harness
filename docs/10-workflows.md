@@ -127,6 +127,21 @@ Superpowers の `writing-plans` → `executing-plans` → `dispatching-parallel-
 
 を入れておけば、上記の Skill 群が自動発動します。
 
+## 9. 応用：ゴール駆動運営（Paperclip パターン）
+
+「タスクで考える」を超えて **「ゴールで考える」** ワークフローが、[`paperclipai/paperclip`](https://github.com/paperclipai/paperclip) (65k★) で提唱されています:
+
+```
+01. ゴール定義 — "Build the #1 AI note-taking app to $1M MRR."
+02. チーム雇用 — CEO / CTO / engineer / designer / marketer (= 任意の bot)
+03. 承認 + 実行 — 戦略レビュー → 予算設定 → Go → ダッシュボード監視
+```
+
+Claude Code 単体でも、この発想で `CLAUDE.md` に **「組織図 / ゴール / 予算」** を書き、Subagent をその役割で命名すると、Paperclip 的に動かせます。
+
+**実例**: Nat Eliason の **Felix**（Paperclip + OpenClaw）— 2026 年 1 月にシード $1,000 で開始、数週間で売上 ≈ $200K (Stripe + ETH)。
+→ 詳細: [`16-case-studies.md`](./16-case-studies.md) (Case 1)
+
 ---
 
 次へ: [`11-multi-window.md`](./11-multi-window.md)

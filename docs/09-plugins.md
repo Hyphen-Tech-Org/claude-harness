@@ -63,6 +63,36 @@ Superpowers は **Claude Code / Codex CLI / Cursor / Gemini CLI / GitHub Copilot
 
 Skills / Agents / Commands / Hooks / Plugins を横断検索できるハブ。
 
+### Ruflo — Claude Code の「神経系」を入れる
+
+```text
+# 軽量 (Slash commands + Skills のみ)
+/plugin marketplace add ruvnet/ruflo
+/plugin install ruflo-core@ruflo
+/plugin install ruflo-swarm@ruflo
+/plugin install ruflo-autopilot@ruflo
+/plugin install ruflo-federation@ruflo
+
+# フル機能 (MCP / Hooks / 98 agents / 60+ commands / 30 skills)
+npx ruvflo init
+```
+
+[`ruvnet/ruflo`](https://github.com/ruvnet/ruflo) (50k★、旧 Claude Flow) は **Claude Code に Swarm（群知能）・Self-Learning Memory・Federation** を追加。Plugin 経由なら 1 リポを汚さず試せる。
+
+### Paperclip — エージェント企業運営
+
+Paperclip 本体は OSS の Node.js サーバですが、**Paperclip MCP** を入れると Claude Code から **Paperclip のゴール / エージェント / 承認 / コスト** を操作できます:
+
+```bash
+git clone https://github.com/Wizarck/paperclip-mcp
+cd paperclip-mcp && pip install -e .
+# .mcp.json に paperclip サーバを追加
+```
+
+これにより Claude Code 側から `list_goals`, `create_goal`, `approve`, `get_cost_summary` 等が呼べます。
+
+詳細応用: [`16-case-studies.md`](./16-case-studies.md) (Case 3 — Paperclip)
+
 ## Plugin の管理
 
 ```text

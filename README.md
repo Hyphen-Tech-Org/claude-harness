@@ -123,6 +123,7 @@ claude
 | 13 | [Ecosystem 2026](./docs/13-ecosystem.md) | **公的 OSS リポ・信頼できる情報源カタログ** |
 | 14 | [Troubleshooting](./docs/14-troubleshooting.md) | よくあるエラーと対処 |
 | 15 | [Glossary](./docs/15-glossary.md) | 用語集 |
+| **16** | **[Case Studies](./docs/16-case-studies.md)** | **🆕 実例・成功事例（Felix / Ruflo Swarm / Paperclip / OpenClaw / Superpowers）** |
 
 ---
 
@@ -162,7 +163,7 @@ claude-code-starter-kit/
 [`docs/13-ecosystem.md`](./docs/13-ecosystem.md) に **2026 年現在で最も信頼できる Claude Code 関連 OSS** をスター数つきで整理してあります。例:
 
 - **公式**: [`anthropics/claude-code`](https://github.com/anthropics/claude-code) / [`anthropics/skills`](https://github.com/anthropics/skills) / [`anthropics/claude-cookbooks`](https://github.com/anthropics/claude-cookbooks)
-- **メジャー OSS**: [`obra/superpowers`](https://github.com/obra/superpowers) (Jesse Vincent の Skills フレームワーク) / [`wshobson/agents`](https://github.com/wshobson/agents) (マルチエージェント) / [`hmans/beans`](https://github.com/hmans/beans) (フラットファイル issue tracker)
+- **メジャー OSS**: [`obra/superpowers`](https://github.com/obra/superpowers) (189k★, Jesse Vincent の Skills フレームワーク) / [`ruvnet/ruflo`](https://github.com/ruvnet/ruflo) (50k★, Multi-agent for Claude Code) / [`paperclipai/paperclip`](https://github.com/paperclipai/paperclip) (65k★, ゼロ人類従業員企業) / [`wshobson/agents`](https://github.com/wshobson/agents) (35k★, マルチエージェント) / [`hmans/beans`](https://github.com/hmans/beans) (768★, フラットファイル issue tracker)
 - **キュレーション**: [`hesreallyhim/awesome-claude-code`](https://github.com/hesreallyhim/awesome-claude-code) / [`VoltAgent/awesome-claude-code-subagents`](https://github.com/VoltAgent/awesome-claude-code-subagents)
 - **Hooks**: [`disler/claude-code-hooks-mastery`](https://github.com/disler/claude-code-hooks-mastery)
 - **セキュリティ Skills**: [`trailofbits/skills`](https://github.com/trailofbits/skills)
