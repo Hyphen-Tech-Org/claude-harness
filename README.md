@@ -7,10 +7,11 @@ by [Hyphen Technologies](https://hyphen-tech.co.jp) — MIT License
 
 ---
 
-## 📊 今日の最前線（最終更新: <!--LAST_UPDATED-->）
+## 📊 今日の最前線（最終更新: <!--LAST_UPDATED-->2026-07-10
 
 <!--FINDINGS_START-->
-_まだ更新がありません。GitHub Actions を有効化するか `node harness/daily.mjs` を実行してください。_
+### 動向
+（本日は記録なし）
 <!--FINDINGS_END-->
 
 ---

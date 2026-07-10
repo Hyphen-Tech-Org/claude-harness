@@ -1,6 +1,8 @@
 {
-  "lastRun": null,
-  "lastVersions": {},
+  "lastRun": "2026-07-10",
+  "lastVersions": {
+    "claude-code": "2.1.206"
+  },
   "knownPatterns": [],
   "applied": []
 }
