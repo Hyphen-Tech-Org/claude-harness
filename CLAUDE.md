@@ -1,58 +1,42 @@
-# Claude Code 向けプロジェクト指示書（テンプレート）
+# CLAUDE.md — claude-harness テンプレート
 
-> このファイルは Claude Code が起動時に**必ず最初に読む**プロジェクトコンテキストです。
-> （[公式仕様](https://code.claude.com/docs/en/memory) — Memory / CLAUDE.md は階層的に親ディレクトリへ遡って自動 load されます。）
+> このファイルは claude-harness のベース CLAUDE.md。
+> プロジェクトにコピーして、プロジェクト固有のルールに書き換えて使う。
+> 詳細: https://github.com/Hyphen-Tech-Org/claude-harness
 
-このリポジトリ `claude-code-starter` は **Claude Code を初めて触る人が、自分の業務に活かせるようになるための学習ラボ** です。
+## ハーネスエンジニアリングの基本方針
 
-Claude として会話するときは、以下のルールに従ってください。
+### Context Discipline（コンテキスト規律）
 
----
+- 生データを会話に流さない。探索はサブエージェントに委譲し、結論だけ受け取る
+- 同じ調査を二度しない。`harness/state.json` に記録して重複を防ぐ
+- `/clear` はタスク区切りで使う。1タスク = 1セッション原則
 
-## 🌸 基本スタンス
+### 実行規律
 
-- ユーザは **コードを書いた経験が浅い**可能性があります。専門用語の多用は避け、たとえ話で補ってください。
-- 何かを実行する前に **「これから何をするか」を 1 行で**説明してください。
-- エラーが出たら、**原因 → 直し方 → 再発防止**の順で説明してください。
-- 「うまく動かない」と言われたら、勝手に推測せず、**実際の画面・コマンド・出力**を確認してから判断してください。
+- 不明・未確認は事実で裏を取ってから実行（npm・GitHub Releases・公式ドキュメントが一次情報）
+- 証明できないことをするな。前提は実行結果で裏付けてから宣言する
+- 依頼されたことは必ず達成する。表面だけなぞる「やった風」は達成ではない
 
-## 📁 作業場所のルール
+### 品質 > 速度
 
-| 用途 | 置き場 |
-|---|---|
-| Claude 用の設定（agents / skills / hooks / commands） | `.claude/` |
-| 学習用のドキュメント | `docs/` |
-| ハンズオン演習 | `examples/` |
-| ユーザが自由に試す場所 | `playground/` |
-| シェルスクリプト等の自動化 | `scripts/`（必要時に作成） |
-| シークレット | **絶対に commit しない**。`.env.example` 経由で扱う |
+- Verification Loop: 変更 → typecheck → test → lint → commit
+- ツールが動いた ≠ 達成。検証を通すまで Done と言わない
 
-## 🧭 振る舞いガイドライン
+## 毎日の自動改善
 
-1. **Plan Mode を活用**: 3 ステップ以上のタスクは、`Shift+Tab` で Plan Mode に入り、承認を待ってから実行。
-2. **Verification Loop**: コミット前に `typecheck → test → lint` を必ず通す。
-3. **YAGNI**: 求められていない機能を勝手に追加しない。3 行の重複 > 早すぎる抽象化。
-4. **コミットメッセージ**: Conventional Commits (`feat:` / `fix:` / `docs:` / `chore:`)。
-5. **コメント**: コードが自明なら書かない。書くなら「なぜ」を 1 行で。
+`.claude/agents/harness-discovered/` に最新のハーネスパターンが毎日追加・更新される。
+`agents/` ディレクトリ内の `.md` は Claude Code が agent doc として自動読み込み。
 
-## 🪟 4 窓ワークフロー時
+## コマンド
 
-複数窓で同じリポを触る場合 (`git worktree`):
-- 自分がどのブランチ / フォルダにいるか冒頭で必ず確認 (`pwd && git branch --show-current`)
-- 他の窓の作業を上書きしそうなときは一旦停止して報告
+```bash
+node harness/daily.mjs     # デイリーパイプライン実行（research→apply→verify→report）
+node harness/verify.mjs    # ハーネス健全性チェックのみ
+```
 
-## 🚫 やらないこと
+## コードスタイル
 
-- `rm -rf` の安易な実行
-- `git push --force` (リモート main / master へは絶対禁止)
-- `.env` / API トークン / 個人情報の commit
-- `--no-verify` で hook をスキップ（CI を壊す原因）
-- ユーザに無断で外部 API を叩く（特に課金が発生するもの）
-
-## 📌 自己改善（Learning Log）
-
-ミスをしたら、その原因と対策を以下に追記してください。**同じミスを 2 度繰り返さない**ためのログです。
-
-### Learning Log
-
-- _(まだなし)_
+- TypeScript: `type` を優先（`interface` は避ける）。`enum` は避ける
+- エラーは明示的に処理。サイレント失敗禁止
+- 不要な抽象化を作らない。3 行の重複はヘルパーより良い

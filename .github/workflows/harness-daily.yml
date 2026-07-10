@@ -1,0 +1,37 @@
+name: Harness Daily Update
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # 08:00 JST
+  workflow_dispatch:
+
+jobs:
+  harness-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run harness pipeline
+        run: node harness/daily.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .claude/ harness/state.json README.md
+          git diff --cached --quiet || git commit -m "chore: harness daily update $(date +%Y-%m-%d)"
+          git push

@@ -1,7 +1,7 @@
 .DS_Store
 Thumbs.db
 
-# secrets — 絶対に commit しない
+# secrets
 .env
 .env.*
 !.env.example
@@ -9,10 +9,14 @@ credentials/
 **/secret.*
 **/api-key.*
 
-# Claude Code のローカル状態
+# Claude Code ローカル状態
 .claude/settings.local.json
 .claude/projects/
 .claude/.cache/
+
+# harness: ephemeral reports (Discord / README がアーカイブ正典)
+harness/reports/
+harness/pending/
 
 # Node / Python
 node_modules/
