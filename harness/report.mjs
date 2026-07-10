@@ -35,19 +35,18 @@ function updateReadme({ today, analysis, applied }) {
     return `- **${f.title}**: ${f.description}${sourceRef}`;
   }).join('\n');
 
-  const appliedLines = applied.length > 0
-    ? applied.map(a => `- \`${a.file}\`: ${a.title}`).join('\n')
-    : '- なし';
+  // 「なし」報告禁止: 適用0件は適用セクションごと省略
+  const appliedBlock = applied.length > 0
+    ? ['\n### 適用済み', ...applied.map(a => `- \`${a.file}\`: ${a.title}`)].join('\n')
+    : '';
 
   const block = [
     `${versionTag}`,
     '',
     '### 動向',
-    findingLines || '（差分なし）',
-    '',
-    '### 適用済み',
-    appliedLines,
-  ].join('\n');
+    findingLines || '（本日は記録なし）',
+    appliedBlock,
+  ].filter(Boolean).join('\n');
 
   let readme = readFileSync(README_PATH, 'utf8');
   readme = readme.replace(/<!--LAST_UPDATED-->.*/, `<!--LAST_UPDATED-->${today}`);
@@ -78,10 +77,11 @@ export async function report({ today, findings, applied, verification }) {
     const ref = f.source ? `\n  📎 <${f.source}>` : '';
     return `> **${f.title}**\n> ${f.description}${ref}`;
   }).join('\n\n');
-  const appliedText = applied.length > 0
-    ? applied.map(a => `• \`${a.file}\` — ${a.title}`).join('\n')
-    : '• なし';
+  // 「なし」報告禁止: 適用0件は【適用】セクションごと省略
+  const appliedSection = applied.length > 0
+    ? `\n\n**【適用】**\n${applied.map(a => `• \`${a.file}\` — ${a.title}`).join('\n')}`
+    : '';
 
-  const msg = `@here\n📊 **ハーネス日報 ${today}** — claude-code ${analysis?.new_version ?? '?'}${analysis?.version_changed ? ' 🆕' : ''}\n\n**【動向】**\n${findingLines || '（差分なし）'}\n\n**【適用】**\n${appliedText}\n\n${verifyEmoji} ${verification.passed}/${verification.total}`;
+  const msg = `@here\n📊 **ハーネス日報 ${today}** — claude-code ${analysis?.new_version ?? '?'}${analysis?.version_changed ? ' 🆕' : ''}\n\n**【動向】**\n${findingLines || '（差分なし）'}${appliedSection}\n\n${verifyEmoji} ${verification.passed}/${verification.total}`;
   await postDiscord(token, channelId, msg);
 }
